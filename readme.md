@@ -109,19 +109,19 @@ This program allows you to create, modify, and inspect disk images.
 
 Examples:
   Create a new disk image:
-    program_name.py -t fat12 -i new_disk.img -f
+    disktool.py -t 256k -i new_disk.img -f
 
   Add files to an existing disk image:
-    program_name.py -t fat12 -i existing_disk.img -a file1.txt file2.txt
+    disktool.py -t 256k -i existing_disk.img -a file1.txt file2.txt
 
   Extract files from a disk image:
-    program_name.py -t fat12 -i disk.img -e file1.txt file2.txt
+    disktool.py -t 256k -i disk.img -e file1.txt file2.txt
 
   Show the directory contents of a disk image:
-    program_name.py -t fat12 -i disk.img -s
+    disktool.py -t 256k -i disk.img -s
 
   Dump a specific block from the disk image in hexadecimal:
-    program_name.py -t fat12 -i disk.img -db 0
+    disktool.py -t 256k -i disk.img -db 0
 
 Note: The --type and --img options are required for all operations.
 ```
