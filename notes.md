@@ -1,3 +1,5 @@
+## Notes on CP/M Disk Formats
+
 Summary table for common disk sizes in CP/M, showcasing typical values for `dsm`, `drm`, `off`, `bsh`, and `blm`.
 
 This table provides a quick reference for these key DPB parameters for various disk formats:
@@ -20,7 +22,6 @@ This table provides a quick reference for these key DPB parameters for various d
 - **DSM (Disk Storage Module)**: Indicates the highest numbered data block.
 - **DRM (Directory Maximum)**: Highest numbered directory entry.
 - **OFF (Offset)**: Number of tracks reserved for the system.
-
 
 ## Directory entries
 

@@ -1,39 +1,11 @@
 
-
-# Summary table for common disk sizes in CP/M, showcasing typical values for `dsm`, `drm`, `off`, `bsh`, and `blm`.
-# This table provides a quick reference for these key DPB parameters for various disk formats:
-#
-# | Disk Size  | DSM  | DRM  | OFF | BSH | BLM | Remarks                                        |
-# |------------|------|------|-----|-----|-----|------------------------------------------------|
-# | 8" SSSD    | 242  | 63   | 2   | 3   | 7   | Single-Sided Single-Density, ~250KB            |
-# | 8" DSSD    | 494  | 127  | 2   | 3   | 7   | Double-Sided Single-Density, ~500KB            |
-# | 8" DSDD    | 988  | 127  | 2   | 3   | 7   | Double-Sided Double-Density, ~1MB              |
-# | 5.25" SSDD | 242  | 63   | 1   | 3   | 7   | Single-Sided Double-Density, ~180KB            |
-# | 5.25" DSDD | 488  | 127  | 1   | 3   | 7   | Double-Sided Double-Density, ~360KB            |
-# | 5.25" DSDD | 720  | 255  | 2   | 4   | 15  | Double-Sided Double-Density, IBM PC, ~720KB    |
-# | 3.5" DSDD  | 720  | 255  | 2   | 4   | 15  | Double-Sided Double-Density, IBM PC, ~720KB    |
-# | 3.5" DSHD  | 1440 | 255  | 2   | 4   | 15  | Double-Sided High-Density, ~1.44MB             |
-
-# **Notes:**
-# - **BSH (Block Shift)**: Used to calculate block size as `2^BSH * 128` bytes.
-# - **BLM (Block Mask)**: Typically `2^BSH - 1`.
-# - **DSM (Disk Storage Module)**: Indicates the highest numbered data block.
-# - **DRM (Directory Maximum)**: Highest numbered directory entry.
-# - **OFF (Offset)**: Number of tracks reserved for the system.
-
 import os
-import sys
 import math
 
 from cpm_dir import CPMDirectoryEntry
 
 EMPTY_DIR = 0xE5
 EMPTY_BYTE = b'\x00'
-
-# Reserved Area - If there are reserved tracks, the first `OFF` tracks are reserved for the system.
-# Directory Area - The directory area starts at the beginning of the first reserved track.
-# Data Area - The data area starts immediately after the directory area.
-
 
 class CPMDisk:
     def __init__(self, drivename, tracks, sectors_per_track, sector_size, block_size, bsh, drm, off):
