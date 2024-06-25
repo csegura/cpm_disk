@@ -1,0 +1,22 @@
+def 256k
+  tracks 77
+  sectors 26
+  bytes_sector 128
+  blocksize 1024
+  bsh 3
+  blm 7
+  dsm 242
+  drm 64
+  off 2
+end
+
+def 8Mb
+  tracks 255
+  sectors 255
+  bytes_sector 128
+  blocksize 2048
+  bsh 4
+  blm 15
+  drm 255
+  off 0
+end
